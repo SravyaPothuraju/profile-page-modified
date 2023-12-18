@@ -1,56 +1,88 @@
+{% load static %}
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FLYSHARE HOME PAGE</title>
+  <link rel="icon" href="./assets/images/flight.png">
+  <link rel="stylesheet" href="{% static 'Login/CSS/style1.css' %}">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="./assets/css/home-page.css">
-
-  <title>FlyShare | Login & Registration</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.7.0/fonts/remixicon.css" rel="stylesheet">
+  <link
+  href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+  rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
+<!-- <a href='#' class="logo"><i class="ri-home-heart-fill"></i><span>FLYSHARE</span></a> -->
 
 <body>
-  <button class="go-top-btn">
-    <img src="./assets/images/scroll.png" alt="arrow up">
-  </button>
+  <div class="first">
+    <button class="go-top-btn">
+      <img src="./assets/images/scroll.png" alt="arrow up">
+    </button>
+    <header>
+      <a href='#' class="logo"><span>FLYSHARE</span></a>
+      <ul class="navbar">
+        <li><a href="#home" class="link">Home</a></li>
+        <li><a href="#about" class="link">About</a></li>
+        <li><a href="#benefits" class="link">Benefits</a></li>
+        <li><a href="#contact" class="link">Contact</a></li>
+      </ul>
+      <div class="main">
+        <!-- <a href="login.html" class="user"><i class="ri-user-fill"></i>Sign In</a>
+      <a href="signup.html" class="register">Register</a> -->
+        <!-- <button class="btn white-btn" onclick="window.location.href='gethelp.html'">Get Started</button> -->
+        <div class="bx bx-menu" id="menu-icon"></div>
+      </div>
+      <div class="action">
+        <div class="profile" onclick="menuToggle();">
+          <img src="./assets/images/pro.png.png" alt="">
+        </div>
+
+        <div class="menu">
+          <h3>
+            User Account
+
+          </h3>
+          <ul>
+            <li>
+              <span class="material-icons icons-size">person</span>
+              <a href="#">My Profile</a>
+            </li>
+            <li>
+              <span class="material-icons icons-size">mode</span>
+              <a href="#">Edit Account</a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <a href="{% url 'logout' %}">
+                Log out
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+  </div>
+
+  </header>
   <div class="wrapper">
-    <nav class="nav">
-      <div class="nav-logo">
-        <p>FLY SHARE </p>
-      </div>
-      <div class="nav-menu" id="navMenu">
-        <ul>
-          <li><a href="#" class="link">Home</a></li>
-          <li><a href="about.html" class="link">About</a></li>
-          <li><a href="benefits.html" class="link">Benefits</a></li>
-          <li><a href="contact.html" class="link">Contact</a></li>
-          <!-- <li><a href="signup.html" class="link">Signup</a></li>
-          <li><a href="login.html" class="link">Login</a></li> -->
-        </ul>
-      </div>
 
-      <div class="nav-button" id="navButton">
-        <button class="btn white-btn" onclick="window.location.href='signup.html'">Sign up</button>
-        <button class="btn white-btn" onclick="window.location.href='login.html'">Login</button>
-
-      </div>
-      <div class="nav-button-btn1">
-        <i class="fa-solid fa-user" onclick="myUserFunction()()"></i>
-      </div>
-      <div class="nav-menu-btn">
-        <i class="bx bx-menu" onclick="myMenuFunction()"></i>
-      </div>
-    </nav>
-    <div class="text-box">
+    <div class="text-box" id="home">
       <h1>Welcome to FlyShare</h1>
       <p> "Unlock seamless travel experiences with FlyShare, your ultimate solution for stress-free
         luggage
         handling"<br>
         Travel lighter with FlyShare by your side.<br>FlyShare: where convenience meets your journey,
         ensuring worry-free trips."</p>
+        <a href="#contact">Get Started</a>
     </div>
+  </div>
   </div>
   <div class="mvv-container" id="about">
     <!-- <h1> ABOUT US</h1> -->
@@ -163,6 +195,7 @@
       </div>
     </div>
   </div>
+
   <div class="contact-main" id="contact1">
     <div class="contact-main-text">
       <h1>Our teams are here to help</h1>
@@ -171,7 +204,7 @@
         the flexibility of the modern web with the control and compliance your
         business needs.
       </p>
-          <a href="contact.html">Need help?</a>
+      <a href="contact">Need help?</a>
     </div>
 
   </div>
@@ -179,7 +212,7 @@
   <div class="contact-form" id="contact">
     <h1>Contact our team directly</h1>
     <form>
-      <!-- <form action="https://formsubmit.co/3c8b0efbdd8eccc2a6cbbbf3edbfd0a6 " method="POST"> -->
+
       <input type="text" name="fname" placeholder="First name" required />
       <input type="text" name="lname" placeholder="Last name" required />
       <input type="email" name="email" placeholder="Email address" required />
@@ -193,67 +226,23 @@
   <div class="copyright">
     &copy; All rights reserved by FlyShare && Made with &hearts; by SRAVYA
   </div>
-  <!-- </div> -->
+
 
 
   <a href="#" class="to-top">
     <i class="fas fa-chevron-up"></i>
   </a>
   <script src="./assets/js/home-page.js"></script>
-
+  <script src="./assets/js/newhome.js"></script>
   <script>
-    function myUserFunction() {
-      var navButton = document.getElementById("navButton");
-
-      navButton.classList.toggle("responsive");
+        
+    function menuToggle() {
+        const toggleMenu = document.querySelector('.menu');
+        toggleMenu.classList.toggle('active')
     }
-  </script>
-
-  <script>
-
-    function myMenuFunction() {
-      var i = document.getElementById("navMenu");
-
-      if (i.className === "nav-menu") {
-        i.className += " responsive";
+</script>
 
 
-      } else {
-        i.className = "nav-menu";
-
-      }
-    }
-
-  </script>
-
-  <script>
-
-    var a = document.getElementById("loginBtn");
-    var b = document.getElementById("registerBtn");
-    var x = document.getElementById("login");
-    var y = document.getElementById("register");
-
-    function login() {
-      x.style.left = "4px";
-      y.style.right = "-520px";
-      a.className += " white-btn";
-      b.className = "btn";
-      x.style.opacity = 1;
-      y.style.opacity = 0;
-    }
-
-    function register() {
-      x.style.left = "-510px";
-      y.style.right = "5px";
-      a.className = "btn";
-      b.className += " white-btn";
-      x.style.opacity = 0;
-      y.style.opacity = 1;
-    }
-
-  </script>
-
-
-</body>
+  <body>
 
 </html>

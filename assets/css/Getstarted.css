@@ -125,6 +125,7 @@ body{
     
 }
 
+
 .wrapper1 {
     font-family: 'poppins', sans-serif;
     display: flex;
@@ -472,6 +473,19 @@ body{
     color: white;
     font-size: 25px;
     font-weight: 600;
+}
+
+.user-pic{
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 30px;
+}
+.sub-menu-wrap{
+    position: absolute;
+    top:100%;
+    right:10%;
+    width:320px;
 }
 /* .nav-menu{
     margin: 10px 10px 10px;
